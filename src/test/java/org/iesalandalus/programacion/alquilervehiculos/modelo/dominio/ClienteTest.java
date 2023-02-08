@@ -92,8 +92,12 @@ public class ClienteTest {
 	
 	@Test
 	void getClienteConDniValidoDevuelveClienteConDichoDni() {
+	/*	System.out.println(cliente.getDni());
+		System.out.println(DNI_VALIDO);*/
 		Cliente cliente = Cliente.getClienteConDni(DNI_VALIDO);
+		System.out.println(cliente.getDni());
 		assertEquals(DNI_VALIDO, cliente.getDni());
+		
 	}
 	
 	@Test 
@@ -110,6 +114,7 @@ public class ClienteTest {
 	void equalsYHasCodeConsistentes() {
 		Cliente cliente = new Cliente(NOMBRE_VALIDO, DNI_VALIDO, TELEFONO_VALIDO);
 		Cliente clienteIgual = Cliente.getClienteConDni(DNI_VALIDO);
+		
 		assertEquals(cliente, cliente);
 		assertEquals(cliente, clienteIgual);
 		assertEquals(clienteIgual, cliente);

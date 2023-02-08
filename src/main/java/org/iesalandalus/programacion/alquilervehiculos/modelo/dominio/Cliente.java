@@ -1,3 +1,5 @@
+
+// Por Joaquin Francisco Sánchez Capel
 package org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 
 import java.util.Objects;
@@ -5,7 +7,6 @@ import java.util.regex.Pattern;
 
 public class Cliente {
 	private static String ER_NOMBRE = "[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]+([ '-][A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]+)*";
-	//private static String ER_DNI = "([0-9]{8})([A-Za-z])";
 	private static String ER_DNI = "\\d{8}\\w";
 	private static String ER_TELEFONO = "\\d{9}";
 	private String nombre;

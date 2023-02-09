@@ -6,9 +6,9 @@ import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class Cliente {
-	private static String ER_NOMBRE = "[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]+([ '-][A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]+)*";
-	private static String ER_DNI = "\\d{8}\\w";
-	private static String ER_TELEFONO = "\\d{9}";
+	private static final String ER_NOMBRE = "[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]+([ '-][A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]+)*";
+	private static final String ER_DNI = "\\d{8}\\w";
+	private static final String ER_TELEFONO = "\\d{9}";
 	private String nombre;
 	private String dni;
 	private String telefono;
@@ -46,7 +46,7 @@ public class Cliente {
 		return dni;
 	}
 
-	public void setDni(String dni) {
+	private void setDni(String dni) {
 		if (dni == null) {
 			throw new NullPointerException("ERROR: El DNI no puede ser nulo.");
 		}

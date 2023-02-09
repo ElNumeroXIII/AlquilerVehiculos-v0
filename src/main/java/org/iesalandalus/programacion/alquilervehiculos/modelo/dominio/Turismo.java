@@ -1,3 +1,5 @@
+//Por Joaquin Francisco Sanchez Capel
+
 package org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 
 import java.util.Objects;

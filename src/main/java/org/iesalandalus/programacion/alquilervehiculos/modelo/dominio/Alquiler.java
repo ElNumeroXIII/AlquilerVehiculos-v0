@@ -1,3 +1,5 @@
+//Por joaquin Francisco Sanchez Capel
+
 package org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 
 import java.time.LocalDate;
@@ -26,10 +28,10 @@ public class Alquiler {
 	public Alquiler (Alquiler alquiler) {
 		if(alquiler == null)
 			throw new NullPointerException("ERROR: No es posible copiar un alquiler nulo.");
-		Cliente cliente = new Cliente(alquiler.getCliente());
-		Turismo turismo = new Turismo(alquiler.getTurismo());
-		setCliente(cliente);
-		setTurismo(turismo);
+		Cliente clienteTemp = new Cliente(alquiler.getCliente());
+		Turismo turismoTemp = new Turismo(alquiler.getTurismo());
+		setCliente(clienteTemp);
+		setTurismo(turismoTemp);
 		setFechaAlquiler(alquiler.getFechaAlquiler());
 		setFechaDevolucion(alquiler.getFechaDevolucion());
 		

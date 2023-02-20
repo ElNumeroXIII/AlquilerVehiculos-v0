@@ -1,5 +1,5 @@
 
-//Por Joaquin Francisco Sanchez
+//Por Joaquin Francisco Sanchez Capel
 
 package org.iesalandalus.programacion.alquilervehiculos.modelo.negocio;
 

@@ -10,6 +10,8 @@ public enum Opcion {
 	INSERTAR_TURISMO("Insertar turismo"),
 	INSERTAR_ALQUILER("Insertar alquiler"),
 	BUSCAR_CLIENTE("Buscar cliente"),
+	BUSCAR_TURISMO("Buscar turismo"),
+	BUSCAR_ALQUILER("Buscar alquiler"),
 	MODIFICAR_CLIENTE("Modificar cliente"),
 	DEVOLVER_ALQUILER("Devolver alquiler"),
 	BORRAR_CLIENTE("Borrar cliente"),
@@ -26,7 +28,7 @@ public enum Opcion {
 	private Opcion(String string) {
 		texto = string;
 	}
-	private boolean esOrdinalValido(int ordinal) {
+	private static boolean esOrdinalValido(int ordinal) {
 		boolean returnal=false;
 		if (ordinal<0 || ordinal>values().length) {
 			returnal=false;
@@ -37,7 +39,7 @@ public enum Opcion {
 		
 		return returnal;
 	}
-	public Opcion getOpcion(int ordinal) {
+	public static Opcion get(int ordinal) {
 		if(esOrdinalValido(ordinal)) {
 			 return values()[ordinal];	
 		}

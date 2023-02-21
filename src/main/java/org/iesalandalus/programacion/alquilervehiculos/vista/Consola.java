@@ -12,14 +12,14 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
 
-	private final String PATRON_FECHA = "dd/MM/yyyy";
-	private final DateTimeFormatter FORMATO_FECHA = DateTimeFormatter.ofPattern(PATRON_FECHA);
+	private static String PATRON_FECHA = "dd/MM/yyyy";
+	private static DateTimeFormatter FORMATO_FECHA = DateTimeFormatter.ofPattern(PATRON_FECHA);
 
 	private Consola() {
 
 	}
 
-	public void mostrarCabecera(String mensaje) {
+	public static void mostrarCabecera(String mensaje) {
 		System.out.printf("%s", mensaje);
 		StringBuilder otroString = new StringBuilder();
 		for (int i = 0; i < mensaje.length() - 1; i++) {
@@ -29,7 +29,7 @@ public class Consola {
 
 	}
 
-	public void mostrarMenu() {
+	public static void mostrarMenu() {
 		mostrarCabecera("Menu de manejo del sistema de alquiler");
 		System.out.printf("Opciones:");
 		for(Opcion opcion: Opcion.values()) {
@@ -37,17 +37,17 @@ public class Consola {
 		}
 	}
 
-	private String leerCadena(String mensaje) {
+	private static String leerCadena(String mensaje) {
 		System.out.printf("%s%n", mensaje);
 		return Entrada.cadena();
 	}
 
-	private Integer leerEntero(String mensaje) {
+	private static Integer leerEntero(String mensaje) {
 		System.out.printf("%s%n", mensaje);
 		return Entrada.entero();
 	}
 
-	private LocalDate leerFecha(String mensaje) {
+	private static LocalDate leerFecha(String mensaje) {
 		System.out.printf("%s", mensaje);
         LocalDate fecha = null;
         
@@ -57,44 +57,44 @@ public class Consola {
         return fecha;
 	}
 
-	public Opcion elegirOpcion() {
+	public static Opcion elegirOpcion() {
 		return Opcion.values()[leerEntero("Elige opcion")];
 	}
 
-	public Cliente leerCliente() {
+	public static Cliente leerCliente() {
 			Cliente clienteDevolver = new Cliente(leerCadena("Nombre del cliente"),leerCadena("DNI del cliente"), leerCadena("telefono del cliente"));
 		return clienteDevolver;	
 	}
 
-	public Cliente leerClienteDni() {
+	public static Cliente leerClienteDni() {
 		Cliente clienteDevolver = new Cliente(Cliente.getClienteConDni(leerCadena("DNI de cliente")));
 		return clienteDevolver;
 	}
 
-	public String leerNombre() {
+	public static String leerNombre() {
 		return	leerCadena("Dame el nombre");
 	}
 
-	public String leerTelefono() {
+	public static String leerTelefono() {
 		return	leerCadena("Dame el numero");
 	}
 
-	public Turismo leerTurismo() {
+	public static Turismo leerTurismo() {
 		Turismo turismo = new Turismo(leerCadena("Marca"),leerCadena("Modelo"),leerEntero("Cilindrada"), leerCadena("Matricula"));
 		return turismo;
 	}
 
-	public Turismo leerTurismomatricula() {
+	public static Turismo leerTurismomatricula() {
 		Turismo turismo = new Turismo(Turismo.getTurismoConMatricula(leerCadena("matricula")));
 		return turismo;
 	}
 
-	public Alquiler leerAlquiler() {
+	public static Alquiler leerAlquiler() {
 		Alquiler alquiler = new Alquiler(leerCliente(),leerTurismo(),leerFecha("Fecha Alquiler"));
 		return alquiler;
 	}
 
-	public LocalDate leerFechaDevolucion() {
+	public static LocalDate leerFechaDevolucion() {
 		return leerFecha("Fecha Devolucion");
 	}
 }

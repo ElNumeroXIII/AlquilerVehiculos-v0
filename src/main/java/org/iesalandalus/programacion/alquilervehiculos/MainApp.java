@@ -8,7 +8,13 @@ public class MainApp {
 
 	public static void main(String[] args) {
 		// Ánimo!!!!
+		Vista vista = new Vista();
 		
+		Modelo modelo = new Modelo();
+		
+		Controlador controlador = new Controlador(modelo,vista) ;
+		
+		controlador.comenzar();
 	}
 
 }
